@@ -1,4 +1,5 @@
 #!/bin/sh
+hexo generate
 hexo deploy
 rm -rf db.json
 rm -rf hexo-org-cache
