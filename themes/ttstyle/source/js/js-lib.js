@@ -34,7 +34,7 @@ $().ready(function(){
         if (event.keyCode == "13") {
             var keywords = $.trim($("#search-input").val());
             if (keywords != "") {
-              window.location.href = "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=site%3Ashuoit.net%20"+keywords;
+              window.location.href = "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=site%3Athisisadu.github.io%20"+keywords;
             }
             return false;
         }
