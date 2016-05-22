@@ -1,7 +1,0 @@
-#+TITLE: Hello,orgmode
-#+DATE: <2016-05-22 Sun 17:00>
-#+TAGS: linux, hexo
-#+LAYOUT: post
-#+CATEGORIES: linux
-* I love linux
-** Why love
