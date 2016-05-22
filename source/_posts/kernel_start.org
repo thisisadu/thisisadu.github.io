@@ -1,0 +1,5 @@
+#+TITLE: 内核笔记
+#+DATE: <2016-05-22 Sun 17:00>
+#+LAYOUT: post
+#+CATEGORIES: 内核
+内核笔记开始记录...
