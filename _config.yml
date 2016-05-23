@@ -71,3 +71,7 @@ deploy:
   type: git
   repo: git@github.com:thisisadu/thisisadu.github.io.git
   branch: master
+
+org:
+  common: |
+          #+OPTIONS: toc:nil
