@@ -1,22 +1,36 @@
-#+TITLE: 为 qemu-arm 构建内核和根文件系统
+#+TITLE: 用 qemu-arm 构建内核开发环境
 #+DATE: <2016-06-01 三> 
 #+LAYOUT: post
 #+CATEGORIES: 内核
 
-  == 本博客为原创内容，欢迎转载，请注明出处连接，谢谢 ==
+  == 本博客为原创内容，欢迎转载，但请注明出处，谢谢 ==
 
 * 准备构建环境
 ** 安装交叉编译器
+sudo apt-get install gcc-arm-linux-guneabi
 ** 安装 qemu-arm 模拟器
+sudo apt-get install qemu-system-arm
 ** 创建工作目录 
+mkdir work 
+cd work (work 是随便起的名字,你可以起你喜欢的名字，文章下文动作假定发生在该目录)
 ** 下载并解压 linux 源码
+wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.6.tar.xz
+tar xvf linux-4.6.tar.xz
 ** 下载并解压 busybox 源码
+wget https://busybox.net/downloads/busybox-1.24.2.tar.bz2
+tar xvf busybox-1.24.2.tar.bz2
 
 * 编译内核
 ** 配置内核
+进入到内核源码目录
+make CROSS_COMPILE=arm-linux-gnueabi- ARCH=arm vexpress_defconfig
+vexpress 是 qemu 支持模拟的一种开发板，内核针对该平台编译
 ** 编译内核
+make CROSS_COMPILE=arm-linux-gnueabi- ARCH=arm
+编译根据机器性能会耗费几分钟到几十分钟不等，一般情况下 20 分钟内能编译完成，请耐性等待
 ** 拷贝镜像
-
+编译后的内核镜为 arch/arm/boot/下 zImage，同时 vexpress 的板设备树文件为 arch/arm/boot/dts/下，将两个文件拷贝到
+根目录待用（根目录即指 work 目录，下同）
 * 编译 busybox
 ** 配置 busybox
 ** 编译 busybox
