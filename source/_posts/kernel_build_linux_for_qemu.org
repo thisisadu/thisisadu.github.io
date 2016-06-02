@@ -92,13 +92,10 @@ sudo mount -o loop rootfs.img tmp
 #+end_example
 将创建的镜像文件挂载到 tmp 目录，这样就能往里面存取文件
 ** 复制 busybox 文件
-
-
 #+begin_example
 sudo cp -ar busybox-1.24.2/_install/* tmp
 #+end_example
 ** 在根文件系统内创建必要的目录
-
 #+begin_example
 cd tmp
 
@@ -107,13 +104,10 @@ sudo mkdir -p lib proc sys dev etc/init.d
 cd ..
 #+end_example
 ** 复制系统 c 运行时库 
-
 #+begin_example
 sudo cp -ar /usr/arm-linux-gnueabi/lib/* tmp/lib
 #+end_example
 ** 创建系统初始化脚本
-
-
 #+begin_example
 sudo vi tmp/etc/init.d/rcS
 
@@ -127,8 +121,6 @@ mdev -s
 这里要解释一下，tmp 目录下的 linuxrc 为内核默认执行的第一个用户程序，而这个程序又会默认去执行 etc/init.d/rcS，这个初始化脚本可以用来做系统初始化时要做的任何事情，
 我们这里仅仅挂载里几个系统关键的虚拟文件系统并启动 mdev 程序，你可以根据需要添加其他任务
 ** 卸载镜像（可略过）
-
-
 #+begin_example
 sudo umount tmp
 #+end_example
