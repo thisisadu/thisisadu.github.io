@@ -36,7 +36,6 @@ tar xvf busybox-1.24.2.tar.bz2
 #+end_example
 * 编译内核
 ** 配置内核
-进入到内核源码目录
 #+begin_example
 cd linux-4.6
 
@@ -84,7 +83,7 @@ dd if=/dev/zero of=rootfs.img bs=1M count=30
 
 mkfs.ext4 rootfs.img
 #+end_example
-用 dd 命令生成一个 30M 的文件，并格式化成 ext4 格式，有些系统 mkfs.ext4 命令可能在/sbin/目录，如果说找不到 mkfs.ext4 命令时请用/sbin/mkfs.ext4 引用全路径 fs
+用 dd 命令生成一个 30M 的文件，并格式化成 ext4 格式，有些系统 mkfs.ext4 命令可能在/sbin/目录，如果说找不到 mkfs.ext4 命令时请用/sbin/mkfs.ext4 引用全路径
 ** 创建临时目录并挂载镜像
 #+begin_example
 mkdir tmp
@@ -142,6 +141,7 @@ vi run.sh
 #!/bin/sh
 qemu-system-arm -M vexpress-a9 -m 512M -kernel zImage -dtb vexpress-v2p-ca9.dtb -sd rootfs.img -nographic -append "root=/dev/mmcblk0 console=ttyAMA0"
 
+添加执行权限
 chmod +x run.sh
 #+end_example
 之所以制作脚本启动，是由于输入的参数太多了，不想每次输入
