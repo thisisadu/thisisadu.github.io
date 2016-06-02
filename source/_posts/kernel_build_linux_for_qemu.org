@@ -41,7 +41,7 @@ cd linux-4.6
 
 make CROSS_COMPILE=arm-linux-gnueabi- ARCH=arm vexpress_defconfig
 #+end_example
-vexpress 是 qemu 支持模拟的一种开发板，内核针对该平台编译
+vexpress 是 qemu 支持模拟的一种开发板，我们针对该平台编译内核
 ** 编译内核
 #+begin_example
 make CROSS_COMPILE=arm-linux-gnueabi- ARCH=arm
@@ -129,7 +129,7 @@ sudo umount tmp
 #+begin_example
 vi run.sh
 
-输入一下内容并保存
+输入以下内容并保存
 #!/bin/sh
 qemu-system-arm -M vexpress-a9 -m 512M -kernel zImage -dtb vexpress-v2p-ca9.dtb -sd rootfs.img -nographic -append "root=/dev/mmcblk0 console=ttyAMA0"
 
