@@ -9,7 +9,7 @@
 * 准备构建环境
 ** 安装交叉编译器
 #+begin_example
-sudo apt-get install gcc-arm-linux-guneabi
+sudo apt-get install gcc-arm-linux-gnueabi
 #+end_example
 ** 安装 qemu-arm 模拟器
 #+begin_example
