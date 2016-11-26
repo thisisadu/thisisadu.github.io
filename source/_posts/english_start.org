@@ -1,6 +1,0 @@
-#+TITLE:start to write something in english 
-#+DATE: <2016-05-22 Sun 17:00>
-#+LAYOUT: post
-#+CATEGORIES: 英语
-I plan to write something in english only in this category, so this is the starting page.
-
